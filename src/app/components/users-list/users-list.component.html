@@ -18,7 +18,7 @@
         <td class="py-0">{{user.numero}}</td>
         <td class="py-0">{{user.correo}}</td>
         <td class="py-0">{{user.edad}}</td>
-        <td class="py-0"> <button (click)="deleteUser(user.id)" class="btn btn-danger btn-sm mx-1 border-rounded">
+        <td class="py-1"> <button (click)="deleteUser(user.id)" class="btn btn-danger btn-sm mx-1 border-rounded">
             Eliminar
           </button>
           <button [routerLink]="['/user/edit', user.id]" class="btn btn-primary btn-sm mx-2">

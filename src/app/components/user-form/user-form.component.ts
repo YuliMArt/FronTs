@@ -77,7 +77,7 @@ export class UserFormComponent implements OnInit {
     }
     console.log(this.user);
     this.userService.createUser(this.user).subscribe((res) => {
-      this.router.navigate(['/']);
+      this.router.navigate(['/users']);
     });
   }
   updateUser() {
