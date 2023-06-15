@@ -1,0 +1,48 @@
+<div class="container mt-5">
+    <h2 class="text-center "> <strong>Usuario</strong></h2>
+    <div class="row ">
+        <div class="col-sm-4 offset-sm-4 ">
+            <div class="card card-body shadow p-3 mb-5 bg-body-tertiary rounded">
+
+                <form [formGroup]="forma" (submit)="edit ? updateUser() : submitUser()">
+
+                    <div class="form-group">
+                        <input type="text" name="nombre" formControlName="nombre" [class.is-invalid]="nombreValid"
+                            [(ngModel)]="user.nombre" class="form-control" placeholder="Nombre" autofocus>
+                        <small *ngIf="nombreValid" class="text-danger">Campo obligatorio</small>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="apellido" formControlName="apellido" [class.is-invalid]="apeValid"
+                            [(ngModel)]="user.apellido" class="form-control" placeholder="Apellido">
+                        <small *ngIf="apeValid" class="text-danger">Campo obligatorio</small>
+
+                    </div>
+                    <div class="form-group">
+                        <input type="number" formControlName="numero" [class.is-invalid]="telValid" name="numero"
+                            [(ngModel)]="user.numero" class="form-control" placeholder="Telefono">
+                        <small *ngIf="telValid" class="text-danger">Campo obligatorio</small>
+
+                    </div>
+                    <div class="form-group">
+                        <input type="email" formControlName="correo" [class.is-invalid]="correoValid" name="correo"
+                            [(ngModel)]="user.correo" class="form-control" placeholder="Correo">
+                        <small *ngIf="correoValid" class="text-danger">Campo obligatorio</small>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="number" formControlName="edad" name="edad" [class.is-invalid]="edadValid"
+                            [(ngModel)]="user.edad" class="form-control" placeholder="Edad">
+                        <small *ngIf="edadValid" class="text-danger">Campo obligatorio</small>
+
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Guardar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

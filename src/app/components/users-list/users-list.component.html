@@ -1,0 +1,35 @@
+<div class="container mt-2">
+  <h2 class="text-center "> <strong>Lista de usuarios</strong> </h2>
+  <table class="table table-hover table-bordered table-striped mt-6">
+    <thead>
+      <tr class="bg-secondary text-white">
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <th class="py-0">{{user.nombre}}</th>
+        <td class="py-0">{{user.apellido}} </td>
+        <td class="py-0">{{user.numero}}</td>
+        <td class="py-0">{{user.correo}}</td>
+        <td class="py-0">{{user.edad}}</td>
+        <td class="py-0"> <button (click)="deleteUser(user.id)" class="btn btn-danger btn-sm mx-1 border-rounded">
+            Eliminar
+          </button>
+          <button [routerLink]="['/user/edit', user.id]" class="btn btn-primary btn-sm mx-2">
+            Editar
+          </button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+
+</div>
